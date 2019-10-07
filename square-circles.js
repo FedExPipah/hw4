@@ -1,5 +1,7 @@
 function setup() {
   createCanvas(400, 400);
+  colorMode(HSB, width, height, 100);
+
 }
 
 var x = []; // new empty array
@@ -7,17 +9,18 @@ var y = []; // new empty array
 
 function draw() {
   background(255);
-  noFill();
 
   x.push(mouseX);
   y.push(mouseY);
 
-  for (var i = 0; i < x.length; i = i + 10) {
-    rectMode(CENTER);
-    rect(x[i], y[i], 30-(x.length - i),y[i]);
-  
-  }
+  rectMode(CENTER);
 
+  for (var i = 0; i < x.length; i = i + 10) {
+
+    rect(x[i], x[i], 1 + (x.length - i), 1 + (y.length - i));
+    stroke(x[i], y[i], 100);
+
+  }
   x = x.slice(-50); // remove all but the last 50 x values
   y = y.slice(-50); // remove all but the last 50 y values
 }
