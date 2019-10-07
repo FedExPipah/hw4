@@ -13,7 +13,7 @@ function draw() {
   y.push(mouseY);
 
   for (var i = 0; i < x.length; i = i + 10) {
-    rectMode(RADIUS);
+    rectMode(CENTER);
     rect(x[i], y[i], 30-(x.length - i),y[i]);
   
   }
